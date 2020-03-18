@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>主机安全-Win Server 系列安全检查项 | 饼干🍪</title><meta name="description" content="主机安全-Win Server 系列安全检查项"><meta name="keywords" content="系统安全"><meta name="author" content="Huang Mi Gao"><meta name="copyright" content="Huang Mi Gao"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://yoursite.com/2019/07/26/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8-Win%20Server%20%E7%B3%BB%E5%88%97%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E9%A1%B9/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="主机安全-Win Server 系列安全检查项"><meta name="twitter:description" content="主机安全-Win Server 系列安全检查项"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png"><meta property="og:type" content="article"><meta property="og:title" content="主机安全-Win Server 系列安全检查项"><meta property="og:url" content="http://yoursite.com/2019/07/26/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8-Win%20Server%20%E7%B3%BB%E5%88%97%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E9%A1%B9/"><meta property="og:site_name" content="饼干🍪"><meta property="og:description" content="主机安全-Win Server 系列安全检查项"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="移动应用安全|Android APP安全测试需要的工具分类和名称" href="http://yoursite.com/2019/07/27/5%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%E7%B3%BB%E6%B5%8B%E8%AF%95%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7%E5%88%86%E7%B1%BB%E5%92%8C%E5%90%8D%E7%A7%B0/"><link rel="next" title="Web安全-挖掘信息泄露的一些方法" href="http://yoursite.com/2019/07/26/%E6%8C%96%E6%8E%98%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95/"><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?cc131bc17833a8d2789cd65c6e42de3f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: '添加书签',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天'
+
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/post.png)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">饼干🍪</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description">我年轻的时候曾是一个诗人。</div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 类别</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 工具</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-archive"></i><span> 相册</span></a><a class="site-page" href="/pan/"><i class="fa-fw fa fa-folder-open"></i><span> 饼干盘</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">主机安全-Win Server 系列安全检查项</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-07-26<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-08-14</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/">系统安全</a></span></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><table>
+<thead>
+<tr>
+<th>NO</th>
+<th>检查类别</th>
+<th>检查项目</th>
+<th>检查要点</th>
+<th>检查对象</th>
+<th>检查方式</th>
+<th>检查方式</th>
+<th>检查方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>账号管理</td>
+<td>检测系统自带的与设备运行、维护等工作无关的账号是否被删除或锁定</td>
+<td>对于管理员帐号，要求更改缺省帐户名称；禁用guest（来宾）帐号;删除无用账户。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;计算机管理”，在“系统工具-&gt;本地用户和组”：      缺省帐户Administrator－&gt;属性      Guest帐号-&gt;属性</td>
+<td>符合：      administrator帐号改名      guest帐号禁用      不存在其他帐号或存在的帐号有明确的说明            不符合：      administrator帐号未改名且未说明原因      guest帐号未禁用      存在其他帐号且没有明确的说明</td>
+</tr>
+<tr>
+<td>2</td>
+<td>检查是否设置帐户定时自动登出</td>
+<td>对于远程登录的账户，设置不活动所连接时间15分钟</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>开始–&gt;运行–&gt;gpedit.msc   计算机配置-&gt;管理模板-&gt;Windows组件-&gt;终端服务-&gt;会话      为断开的会话设置时间限制 已启用      到达时间限制时终止会话 已启用</td>
+<td>符合：两项均不高于15分钟      不符合：两项中有高于15分钟的</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>口令管理</td>
+<td>密码安全要求</td>
+<td>1、口令中不能含有与IP地址、账号名、公司名、人名、生日、记念日期、电话、E-mail等有关的字符；      2、不同主机、不同账号均不能使用同一个密码；      3、不同主机、不同账号均不能使用有规律的密码；</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>1、弱口令检查步骤一：            1）检查用户密码是否存在弱密码（重点检查用户名与密码相同的极弱密码）（注：需要导出配置文件、离线扫描）      2、弱口令检查步骤二：            1）省公司将4A系统级所有资源的口令密文保存为pass.txt，放置在4A服务器中。注：密码用回车符分隔            2）省公司将检查组提供的“弱口令字典”和“密码比对脚本”拷贝至同一台4A服务器；            3）省公司使用4A系统的口令加密方式，将弱口令字典转换为”弱口令密文字典”          4）运行密码比对脚本。如果”4A密文口令”与”弱口令密文字典”中存在重复的密码，则本项不通过。</td>
+<td>密码破解成功则认为不符合</td>
+</tr>
+<tr>
+<td>4</td>
+<td>检查用户口令策略是否符合安全要求</td>
+<td>最短密码长度8个字符，启用本机组策略中密码必须符合复杂性要求的策略。即密码至少包含以下四种类别的字符中的三种：      l 英语大写字母 A, B, C, … Z       l 英语小写字母 a, b, c, … z       l 西方阿拉伯数字 0, 1, 2, … 9          非字母数字字符，如标点符号，@, #, $, %, &amp;,   *等      对于采用静态口令认证技术的设备，账户口令的生存期不长于90天。      对于采用静态口令认证技术的设备，应配置设备，使用户不能重复使用最近6次（含6次）内已使用的口令。            在域环境下域服务器安全策略优先级高于本地安全策略议，检查域服务安全策略设置。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>1、进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“帐户策略-&gt;密码策略”：      查看是否“密码必须符合复杂性要求”选择“已启动”      2、进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“帐户策略-&gt;密码策略”：      查看“密码最长使用期限”      3、进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“帐户策略-&gt;密码策略”：      查看“强制密码历史”</td>
+<td>符合：      “密码必须符合复杂性要求”选择“已启动”      “密码最长存留期”不长于90天      “强制密码历史”大于等于5            不符合：未按照上述策略配置</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>补丁漏洞管理</td>
+<td>检查补丁更新情况</td>
+<td>检查WINDOWS系统的SERVICE   PACK是否符合要求，并及时更新微软发布的中高危补丁。安装的SP如下：      1、WINDOWS 2003：SP2       2、WINDOWS 2008：SP2      3、WINDOWS 2008 R2：SP1</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>查看系统版本      1.在“开始-&gt;运行-&gt;键入cmd”，运行systeminfo，查看“OS 版本”是否为要求版本</td>
+<td>符合：      1、WINDOWS 2003为SP2版本       2、WINDOWS 2008为SP2版本      3、WINDOWS 2008 R2为 SP1版本      未发现中高危操作系统漏洞            不符合      1、Windows 2003 低于SP2版本      2、Windows 2008 低于SP2版本      3、Windows 2008 R2低于SP1版本      发现中高危操作系统漏洞</td>
+</tr>
+<tr>
+<td>6</td>
+<td>漏洞管理</td>
+<td>对于中高危漏洞，应及时修复；对于暂无修复手段的漏洞，应通过其他技术手段进行风险规避；      注：中高危漏洞以国内外权威的CVE漏洞库和国家互联网应急中心CNVD漏洞库最新版为判断依据。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>1.对目标主机进行漏洞扫描，要求扫描后未发现中高危操作系统漏洞</td>
+<td>符合：      未发现中高危操作系统漏洞            不符合      发现中高危操作系统漏洞</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>系统服务</td>
+<td>检查WINDOWS主机是否开启了不必要的服务</td>
+<td>对系统运行的服务应该进行严格控制，一些不应该开启的服务或是会带来安全性问题的服务原则上都应该关闭。      停止如下不需要的服务：      ü DHCP server services      ü WINS Service      ü Fax Service         Bluetooth Support Service      ü Indexing Services      ü Messenger Service      ü Print Spooler      ü Remote Registry Service（AD域环境除外）          Server（AD域环境除外）      ü Simple TCP/IP Services         Wireless Zero Configuration         SMTP/FTP/IIS Admin/WWW Publish            SNMP Community String   （如果需要IIS服务，可关闭由IIS提供的SMTP、FTP服务）      按照服务最小化原则，禁用所有不需要的服务。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>1、在“开始-&gt;运行-&gt;键入services.msc”，确认在服务中查看相应的服务已经关闭。      2、打开“控制面板”，打开“管理工具”中的“服务”，找到“SNMP   Service”，单击右键打开“属性”面板中的“安全”选项卡，在这个配置界面中，可以修改community strings（团体名称）。            备注：若未开启SNMP服务，则此项符合要求。</td>
+<td>符合：      以下服务停用         DHCP server services      ü WINS Service      ü Fax Service         Bluetooth Support Service      ü Indexing Services      ü Messenger Service      ü Print Spooler      ü Remote Registry Service（AD域环境除外）          Server（AD域环境除外）      ü Simple TCP/IP Services         Wireless Zero Configuration         SMTP/FTP/IIS Admin/WWW   Publish      且未停用服务提交了原因说明            不符合：以上服务未停用或未停用服务没有提交原因说明</td>
+</tr>
+<tr>
+<td>8</td>
+<td>安全配置</td>
+<td>检查屏幕保护程序安全配置</td>
+<td>启用屏幕保护程序，防止管理员忘记锁定机器被非法攻击；设置带密码的屏幕保护，并将时间设定为5分钟以内</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>进入“控制面板－&gt;显示－&gt;屏幕保护程序”：      启用屏幕保护程序，设置等待时间为“5分钟”，启用“在恢复时使用密码保护”。            备注：设置屏保不大于5分钟即为满足</td>
+<td>符合：      启用屏幕保护程序，等待时间小于等于5分钟 且      启用“在恢复时使用密码保护”            不符合：      未启用屏幕保护程序或等待时间大于5分钟 或      未启用“在恢复时使用密码保护”</td>
+</tr>
+<tr>
+<td>9</td>
+<td>检查是否安装防病毒软件</td>
+<td>检查windows设备是否安装了统一部署的防病毒软件</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>控制面板-&gt;添加或删除程序，是否安装有防病毒软件。打开防病毒软件控制面板，查看病毒码更新日期。</td>
+<td>符合：      安装了公司统一部署的防病毒软件 且      更新时间距最新发布不超过7天            不符合：      未安装公司统一部署的防病毒软件 或更新时间距最新发布超过7天</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>RDP协议</td>
+<td>1.RDP访问协议加密      2.RDP会话超时控制      3.RDP登录设置</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>1.查看，开始-&gt;管理工具-&gt;终端服务配置-&gt;连接-&gt;双击打开RDP-Tcp-&gt;常规-&gt;加密级别        2.查看，开始-&gt;管理工具-&gt;终端服务配置-&gt;连接-&gt;双击打开RDP-Tcp-&gt;会话-&gt;”结束已断开的会话”和”空闲会话限制”      3.查看，开始-&gt;管理工具-&gt;终端服务配置-&gt;连接-&gt;双击打开RDP-Tcp-&gt;登录设置</td>
+<td>符合：      1.加密级别为“高”      2.两项均不高于15分钟      3.勾选了“总是提示密码”      不符合：      1.加密级别低于“高”      2.两项中有高于15分钟的      3.没有勾选“总是提示密码”</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>远程注册表</td>
+<td>禁用可远程访问的注册表路径和子路径</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>查看“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;安全选项”:网络访问中，查看，可远程访问的注册表路径、可远程访问的注册表路径和子路径</td>
+<td>符合：可远程访问的注册表路径、可远程访问的注册表路径和子路径内容为空      不符合：可远程访问的注册表路径、可远程访问的注册表路径和子路径内容非空</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>FTP安全</td>
+<td>1、控制FTP进程缺省访问权限，当通过FTP服务创建新文件或目录时应屏蔽掉新文件或目录不应有的访问允许权限；      2、主机FTP服务，关闭匿名登录方式；      3、禁止Administrator及拥有系统管理员权限的用户登陆FTP；      4、修改系统FTP banner，避免泄漏FTP名称，版本号，并且给出登陆告警信息</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>“管理工具”→“Internet信息服务（IIS）管理器”菜单项，打开“Internet信息服务（IIS）管理器”窗口。在左窗格中展开“FTP站点”目录，右键单击“默认FTP站点”选项，并选择“属性”，右键单击“默认FTP站点”选项，切换到“主目录”选项卡，单击“浏览”按钮在本地计算机磁盘中选择要作为FTP站点主目录的文件夹，并依次单击“确定”按钮。根据实际需要选中或取消选中“写入”复选框，以确定用户是否能够在FTP站点中写入数据      点击‘安全账户’去掉‘允许匿名连接’选项卡      点击“消息”更改‘标题’、‘欢迎’、‘推出’内容</td>
+<td>符合：定义了目标目录，关闭匿名登录选项卡；禁止Administrator帐号登录；更改banner信息。      不符合：未定义了目标目录，匿名登录选项卡打勾；Administrator帐号可以登录；未更改banner信息。</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>信息泄露</td>
+<td>需对rpc、DCE/RPC服务枚举漏洞</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>使用netstat   -antpo命令查看开放端口以及对应的进程信息</td>
+<td>符合：不存在相关开放端口      不符合：存在相关开放端口</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>检查是否开启防火墙</td>
+<td>启用自带防火墙或安装第三方威胁防护软件。根据业务需要限定允许访问网络的应用程序，和允许远程登陆该设备的IP地址范围</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>进入“控制面板－&gt;网络连接－&gt;本地连接－&gt;属性”，在高级选项的设置中查看是否启用了Windows防火墙      在“例外”中查看列出的程序和服务</td>
+<td>启用Windows防火墙。“例外”中允许接入网络的程序均为业务所需。</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>NTFS格式</td>
+<td>检查磁盘分区格式是否为NTFS格式</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>在资源管理器中右键点击磁盘-&gt;属性-&gt;常规，查看文件系统格式</td>
+<td>符合：所有磁盘分区均为NTFS格式      不符合：存在FAT格式的磁盘分区</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>访问控制</td>
+<td>检查Windows系统的共享是否禁用；</td>
+<td>检查有无自建的共享目录。      非域环境中，检查系统的默认共享是否开启。域环境下可以有必须的共享SYSVOL 和 NETLOGON等。            备注：      系统的默认共享,如：C$、D$；      用户自建共享，指用户自己创建的共享目录</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>在cmd下输入#net   share查看共享情况。</td>
+<td>符合：net   share查看没有共享文件            不符合：net share查看到共享文件</td>
+</tr>
+<tr>
+<td>17</td>
+<td>检查远程连接工具配置安全</td>
+<td>检查WINDOWS系统的远程桌面是否开启。如果开启，检查是否MS12-020等补丁是否安装。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>1。读取注册表，HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal   Server下的fDenyTSConnections（dword类型）值设为0，不为0，判断远程桌面是否打开，没有打开则通过        2。如果远程桌面打开了，在“开始-&gt;运行-&gt;键入cmd”，再键入”systeminfo”，在回显信息中查看是否有安装KB2621440安全更新            C:&gt;systeminfo | find “2621440”                        [222]: KB2621440 -   Update在输出中检查是否包含2621440补丁，如果没有则失败。</td>
+<td>符合：没有开启远程桌面或者安装了KB2621440安全更新            不符合：开启远程桌面且未安装安装KB2621440安全更新</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>检查远程关机配置安全</td>
+<td>在本地安全设置中从远端系统强制关机只指派给Administrators组。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;“用户权利指派”或“用户权利分配”:      查看“从远端系统强制关机”设置</td>
+<td>符合：“从远端系统强制关机”仅配置为Administrators组            不符合：“从远端系统强制关机”配置除Administrators组外还有其他用户组</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>检查本地关机配置安全</td>
+<td>在本地安全设置中关闭系统仅指派给Administrators组。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;“用户权利指派”或“用户权利分配”:      查看“关闭系统”设置</td>
+<td>符合：“关闭系统”仅配置为Administrators组            不符合：“关闭系统”配置除Administrators组外还有其他用户组</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>检查用户权利指派配置安全</td>
+<td>在本地安全设置中取得文件或其它对象的所有权仅指派给Administrators。</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;“用户权利指派”或“用户权利分配”：      查看是否“取得文件或其它对象的所有权”设置</td>
+<td>符合：“用户权利指派”或“用户权利分配”仅指派给Administrators            不符合：“用户权利指派”或“用户权利分配”除指派给Administrators外还有其他用户、用户组</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>远程管理地址安全要求</td>
+<td>对于通过IP协议进行远程维护的设备，设备应支持对允许登陆到该设备的IP地址范围进行设定；</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>打开“管理工具”—“本地安全设置”，点击“IP安全策略   在本地机器”选择“创建IP策略”，“新IP安全策略 属性”，选择“寻址”标签，源地址设为‘任何IP地址’，目的地址设为‘管理终端IP’—“确定”</td>
+<td>符合：设置了管理源IP地址                                                                             不符合：未设置管理源IP地址</td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>禁止不安全的管理方式</td>
+<td>禁止使用telnet远程管理；</td>
+<td>Windows   2003、2008、2012</td>
+<td>检查项</td>
+<td>cmd中输入services.msc，找到Telnet服务–属性–将启动类型改为已禁用，服务状态改变为“停止”</td>
+<td>符合：Telnet服务–属性–将启动类型为启用      不符合：Telnet服务–属性–将启动类型改为已禁用，服务状态改变为“停止”</td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td>日志审计</td>
+<td>检查日志文件大小设置是否合理</td>
+<td>查看是否“应用程序日志”、“安全日志”、“系统日志”属性中的日志大小设置不小于“8192KB”   ,设置当达到最大的日志尺寸时，“按需要改写事件”</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;事件查看器”，在“事件查看器（本地）”中：      查看是否“应用日志”属性中的日志大小设置不小于“51200KB” ,设置当达到最大的日志尺寸时，“按需要改写事件”</td>
+<td>符合：登陆SMP或日志分析服务器，可查看主机相关日志            不符合：登陆SMP或日志分析服务器，不能查看主机相关日志</td>
+</tr>
+<tr>
+<td>24</td>
+<td>检查审核登录是否配置</td>
+<td>设备应配置日志功能，对用户登录进行记录，记录内容包括用户登录使用的账号，登录是否成功，登录时间，以及远程登录时，用户使用的IP地址。</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>开始-&gt;运行-&gt;   执行“ 控制面板-&gt;管理工具-&gt;本地安全策略-&gt;审核策略”      审核登录事件。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：审核登录事件设置为成功、失败两项均审核            不符合：审核登录事件设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td>检查审核策略更改配置</td>
+<td>启用组策略中对Windows系统的审核策略更改</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;审核策略”中      查看“审核策略更改”设置。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：“审核策略更改”设置为成功、失败两项均审核            不符合“审核策略更改”设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+<tr>
+<td>26</td>
+<td>检查审核对象访问配置</td>
+<td>启用组策略中对Windows系统的审核对象访问</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;审核策略”中：      查看“审核对象访问”设置。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：“审核对象访问”设置为成功、失败两项均审核            不符合：“审核对象访问”设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>检查审核过程追踪配置</td>
+<td>启用组策略中对Windows系统的审核过程追踪</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;审核策略”中：      查看“审核过程追踪 ”设置。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：“审核过程追踪”设置为成功、失败两项均审核            不符合：“审核过程追踪”设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td>检查审核事件目录服务访问配置</td>
+<td>启用组策略中对Windows系统的审核事件目录服务访问</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;审核策略”中：      查看“审核事件目录服务访问”设置。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：“审核事件目录服务访问”设置为成功、失败两项均审核            不符合：“审核事件目录服务访问”设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td>检查审核特权使用配置</td>
+<td>启用组策略中对Windows系统的审核特权使用</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;审核策略”中：      查看“审核特权使用”设置。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：“审核特权使用”设置为成功、失败两项均审核            不符合：“审核特权使用”设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td>检查审核系统事件配置</td>
+<td>启用组策略中对Windows系统的审核系统事件</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;审核策略”中：      查看“审核系统事件”设置。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：“审核系统事件”设置为成功、失败两项均审核            不符合：“审核系统事件”设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td>检查审核账户管理配置</td>
+<td>启用组策略中对Windows系统的审核帐户管理</td>
+<td>Windows   2003、2008、2012</td>
+<td>自查项</td>
+<td>进入“控制面板-&gt;管理工具-&gt;本地安全策略”，在“本地策略-&gt;审核策略”中：      查看“审核账户管理” 设置。      备注：设置为成功或失败或两项均审核即符合要求。</td>
+<td>符合：“审核账户管理”设置为成功、失败两项均审核            不符合：“审核账户管理”设置成功或失败其中一项未审核</td>
+<td></td>
+</tr>
+</tbody></table>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Huang Mi Gao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/07/26/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8-Win%20Server%20%E7%B3%BB%E5%88%97%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E9%A1%B9/">http://yoursite.com/2019/07/26/%E4%B8%BB%E6%9C%BA%E5%AE%89%E5%85%A8-Win%20Server%20%E7%B3%BB%E5%88%97%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E9%A1%B9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">饼干🍪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/">系统安全    </a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2019/07/27/5%E5%AE%89%E5%8D%93%E5%AE%89%E5%85%A8%E7%B3%BB%E6%B5%8B%E8%AF%95%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7%E5%88%86%E7%B1%BB%E5%92%8C%E5%90%8D%E7%A7%B0/"><img class="prev_cover lozad" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>移动应用安全|Android APP安全测试需要的工具分类和名称</span></div></a></div><div class="next-post pull-right"><a href="/2019/07/26/%E6%8C%96%E6%8E%98%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95/"><img class="next_cover lozad" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>Web安全-挖掘信息泄露的一些方法</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div id="lv-container" data-id="city" data-uid="MTAyMC80NTU3OC8yMjA4OQ=="><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2020 By Huang Mi Gao</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="阅读模式"> </i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换">繁</a><i class="fa fa-moon-o nightshift" id="nightshift" title="夜间模式"></i></section><div id="post_bottom"><div id="post_bottom_items"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">目录</div></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" data-click="false"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();</script></body></html>
