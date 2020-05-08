@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>区块链基础知识 | 饼干🍪</title><meta name="description" content="区块链基础知识"><meta name="keywords" content="永久激活码"><meta name="author" content="Huang Mi Gao"><meta name="copyright" content="Huang Mi Gao"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="http://yoursite.com/2020/05/08/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="区块链基础知识"><meta name="twitter:description" content="区块链基础知识"><meta name="twitter:image" content="http://img1.imgtn.bdimg.com/it/u=1747521394,1400572959&amp;fm=26&amp;gp=0.jpg"><meta property="og:type" content="article"><meta property="og:title" content="区块链基础知识"><meta property="og:url" content="http://yoursite.com/2020/05/08/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"><meta property="og:site_name" content="饼干🍪"><meta property="og:description" content="区块链基础知识"><meta property="og:image" content="http://img1.imgtn.bdimg.com/it/u=1747521394,1400572959&amp;fm=26&amp;gp=0.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="next" title="实验：EFS的加密、解密与破解" href="http://yoursite.com/2020/05/08/%E5%AE%9E%E9%AA%8C%EF%BC%9AEFS%E7%9A%84%E5%8A%A0%E5%AF%86%E3%80%81%E8%A7%A3%E5%AF%86%E4%B8%8E%E7%A0%B4%E8%A7%A3/"><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?cc131bc17833a8d2789cd65c6e42de3f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'true',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: '添加书签',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天'
+
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、基础知识"><span class="toc-number">1.</span> <span class="toc-text">一、基础知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块链"><span class="toc-number">2.</span> <span class="toc-text">区块链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#比特币"><span class="toc-number">3.</span> <span class="toc-text">比特币</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块链的时代"><span class="toc-number">4.</span> <span class="toc-text">区块链的时代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、实验环境"><span class="toc-number">5.</span> <span class="toc-text">二、实验环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、实验步骤一"><span class="toc-number">6.</span> <span class="toc-text">三、实验步骤一</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number"></span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#中本聪"><span class="toc-number">1.</span> <span class="toc-text">中本聪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#比特币-1"><span class="toc-number">2.</span> <span class="toc-text">比特币</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是Token"><span class="toc-number">3.</span> <span class="toc-text">什么是Token</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#密码朋克是什么"><span class="toc-number">4.</span> <span class="toc-text">密码朋克是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是算力"><span class="toc-number">5.</span> <span class="toc-text">什么是算力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取比特币的方式"><span class="toc-number">6.</span> <span class="toc-text">获取比特币的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是区块链"><span class="toc-number">7.</span> <span class="toc-text">什么是区块链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块链的分类："><span class="toc-number">8.</span> <span class="toc-text">区块链的分类：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章："><span class="toc-number">9.</span> <span class="toc-text">参考文章：</span></a></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(http://img1.imgtn.bdimg.com/it/u=1747521394,1400572959&amp;fm=26&amp;gp=0.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">饼干🍪</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'"><div class="mobile_author-info__description">我年轻的时候曾是一个诗人。</div></div><hr><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 类别</span></a><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 工具</span></a><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-archive"></i><span> 相册</span></a><a class="site-page" href="/pan/"><i class="fa-fw fa fa-folder-open"></i><span> 饼干盘</span></a><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title"><div class="posttitle">区块链基础知识</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2020-05-08<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-05-08</time></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><html><head></head><body><h4 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h4><ol>
+<li><h4 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h4><p>区块链是分布式数据存储、点对点传输、共识机制、加密算法等计算机技术的新型应用模式。</p>
+<p>区块链（Blockchain）是比特币的一个重要概念，它本质上是一个去中心化的数据库，同时作为比特币的底层技术，是一串使用密码学方法相关联产生的数据块，每一个数据块中包含了一次比特币网络交易的信息，用于验证其信息的有效性（防伪）和生成下一个区块。</p>
+<p>以上内容摘自百度百科。</p>
+</li>
+<li><h4 id="比特币"><a href="#比特币" class="headerlink" title="比特币"></a>比特币</h4><p>比特币（BitCoin）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的P2P网络。比特币是一种P2P形式的数字货币。点对点的传输意味着一个去中心化的支付系统。</p>
+<p>与大多数货币不同，比特币不依靠特定货币机构发行，它依据特定算法，通过大量的计算产生，比特币经济使用整个P2P网络中众多节点构成的分布式数据库来确认并记录所有的交易行为，并使用密码学的设计来确保货币流通各个环节安全性。P2P的去中心化特性与算法本身可以确保无法通过大量制造比特币来人为操控币值。基于密码学的设计可以使比特币只能被真实的拥有者转移或支付。这同样确保了货币所有权与流通交易的匿名性。比特币与其他虚拟货币最大的不同，是其总数量非常有限，具有极强的稀缺性。该货币系统曾在4年内只有不超过1050万个，之后的总数量将被永久限制在2100万个。</p>
+<p>以上内容摘自百度百科</p>
+</li>
+<li><h4 id="区块链的时代"><a href="#区块链的时代" class="headerlink" title="区块链的时代"></a>区块链的时代</h4><p>比特币的诞生是区块链1.0时代到来的标志。主要创新是创建了一套去中心化的、公开透明的交易记录总账。在区块链1.0时期，区块链技术的发展与数字货币密切相关。</p>
+<p>在区块链2.0时代，承载智能合约的区块链技术将充分发挥非中心化交易账本的功能。区块链2.0时代将是区块链爆发的时代。</p>
+<p>区块链3.0时代是区块链进入全面应用的时代，当区块链技术被用于社会治理时，我们就迈进了区块链3.0时代。</p>
+</li>
+</ol>
+<h4 id="二、实验环境"><a href="#二、实验环境" class="headerlink" title="二、实验环境"></a>二、实验环境</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">服务器：Centos 7 ，IP地址：10.1.1.100</span><br><span class="line">客户机：windows_7 X64 IP地址：随机分配</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="三、实验步骤一"><a href="#三、实验步骤一" class="headerlink" title="三、实验步骤一"></a>三、实验步骤一</h4><p>区块链已经成为全球互联网金融最火热的概念，但是什么是区块链呢？人们现在常说的比特币又是什么呢？</p>
+<p>我们的任务分为2个部分：</p>
+<p>1．区块链需要知道的一些基础知识。</p>
+<p>2．通过在线模板，直观体验区块链。</p>
+<h3 id><a href="#" class="headerlink" title></a></h3><p><strong>任务描述：了解区块链中的一些名词或术语。</strong></p>
+<ol>
+<li><h4 id="中本聪"><a href="#中本聪" class="headerlink" title="中本聪"></a>中本聪</h4><p>中本聪<satoshi nakamoto> 比特币创始人，2008年11月1日，中本聪在网上发布了一篇技术论文《比特币白皮书：一种点对点电子支付系统》，两个月后，2009年1月3日他开发出了第一版比特币客户端，标志着比特币正式诞生。2010年12月12日，他在比特币论坛bitcoin.org发表了最后一个帖子之后退出了比特币项目，从此，神奇且神秘的中本聪从大众视野消失，从发表论文以来，中本聪的真实身份长期不为外界所知，维基解密创始人朱利安·阿桑奇（Julian Assange）宣称中本聪是一位密码朋克（Cypherpunk）。</satoshi></p>
+</li>
+<li><h4 id="比特币-1"><a href="#比特币-1" class="headerlink" title="比特币"></a>比特币</h4><p>官方定义：比特币是一个创新的支付网络，一种新的货币。它是一种加密货币，有些地方可能把加密货币又称为数字货币（或称电子货币），但实际上，加密货币是数字货币的子集，同为子集的还有虚拟货币（如Q币），加密货币的称谓要更加专业。</p>
+<p>比特币的特性：</p>
+<p>(1) 健壮性：比特币完全依靠P2P网络，无发行中心，每个人都可以参与其中，所以外部无法关闭它</p>
+<p>(2) 匿名、免税、免监管：交易管理和比特币发行由比特币网络统一进行，无需中央管理机构或银行。</p>
+<p>(3)比特币总量只有2100万个，完全去中心化，没有发行机构，没有人或者组织可以操纵其发行的数量，也不可能操纵，其发行与流通是通过开源的P2P算法实现的。</p>
+<p>(4)比特币是一种电子货币，由计算机生成的一串复杂代码组成。</p>
+<p>(5)无国界：跨境跨国汇款，一般的货币会经过层层外汇管制机构，而且交易记录会被多方记录在案，用比特币交易，输入数字地址，点一下鼠标，P2P网络确认交易后大量资金就过去了，不经过人和管控机构，也不会留下任何交易记录(这里所说的不会留下任何交易记录，指的是不会记录交易双方的真实身份信息，最早的区块链——BTC（比特币）区块中主要就是记录的BTC交易数据。<br>是的，在它的每个区块中真的是记录得一条条的转账交易记录，也就是说BTC这个货币仅仅是作为一种数据记录在区块链中。但是，这些所谓的转账记录也只是记录了什么时间A转给了B多少个比特币，其中的A、B也只是两个账户的钱包地址，一串hash值而已。这些记录也会同步到网络中其他的节点上。)</p>
+</li>
+<li><h4 id="什么是Token"><a href="#什么是Token" class="headerlink" title="什么是Token"></a>什么是Token</h4><p>Token是区块链上流通的、带有价值的、加密的权益凭证。这意味着现实世界的各种权益证明都可以Token化，放到数字世界里去流通，这些有价值的资产，未来都可以上链，然后通过互联网实现跨国界、高效率低成本的交易。这也是区块链最重要的应用—-让资产直接在互联网上流通。区块链里的Token完全可能是集金钱、荣誉标识、身份标识即确权工具系统资产量化指标、系统通行证和系统保护与一身。市场经常将Token翻译为“代币”，但最好翻译为“通证”，因为其不仅仅是代币，可以代表任何有价值的东西，代币、游戏币、代金券等。</p>
+<p>有价值的Token至少是三权合一：</p>
+<p>物权属性：使用权，可交付产品或服务</p>
+<p>货币属性：可流通、硬通货</p>
+<p>股权属性：可增值</p>
+</li>
+<li><h4 id="密码朋克是什么"><a href="#密码朋克是什么" class="headerlink" title="密码朋克是什么"></a>密码朋克是什么</h4><p>中本聪的比特币白皮书最早发布于“密码朋克”，狭义地说：密码朋克是一套加密的电子邮件系统，讨论的话题包括数学、加密技术、计算机技术等等，密码朋克的用户约1400人，早期的成员有非常多的IT精英，中本聪就是其中之一。据统计，密码朋克的成员讨论和发明失败的数字货币和支付系统多达数十个，因此中本聪发明的比特币并不是横空出世，而是基于吸取了前面数十次失败后发明出来的。</p>
+</li>
+<li><h4 id="什么是算力"><a href="#什么是算力" class="headerlink" title="什么是算力"></a>什么是算力</h4><p>通俗的讲，就是计算能力。算力一词一般用于挖取比特币的过程（或者其他的数字货币），挖取比特币需要矿机，而每个矿机每秒钟能够做多少次运算（hash碰撞），就代表这台矿机的算力，单位为hash/s。算力是比特币网络处理能力的度量单位。</p>
+<p>Hash碰撞的定义：给定表M，存在函数F(key)，对任意给定的关键字key,代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希（Hash）表，函数F(key)为哈希函数（Hash）</p>
+</li>
+<li><h4 id="获取比特币的方式"><a href="#获取比特币的方式" class="headerlink" title="获取比特币的方式"></a>获取比特币的方式</h4><p>(1)当矿工“挖矿”赚取比特币</p>
+<p>(2)收购别人的比特币</p>
+<p>(3)通过比特币交易平台买入</p>
+<p>(4)通过注册或做任务获得（仅限某些交易平台或相关网站，且奖励一般都很少，大部分在0.0001比特币）</p>
+<p>(5)开店采用比特币收款</p>
+<p>(6)通过工作获取比特币（仅限双方同意使用比特币作为工作酬劳）</p>
+</li>
+<li><h4 id="什么是区块链"><a href="#什么是区块链" class="headerlink" title="什么是区块链"></a>什么是区块链</h4><p>区块链是一种分布式（去中心化）的资料库（数据库、记账本），所谓去中心化，就是与我们平时所说的数据库（或者账本）不同，并不是只有系统维护者才可以更改数据库（记账），在区块链网络中，每一个用户（也称每一个节点）都参与记账，系统会挑选出在一个时间段内记账最快最好的用户，该用户把这段时间内的数据变化记录到一个区块中（可视为账页），并将这个区块备份给网络中的其他用户，下个时间段也会进行这个操作，周而复始，这样系统中每一个用户都有完整的账本副本。区块链技术也叫分布式总账技术。</p>
+<p>由于区块链是去中心化的，所以没有中心节点可以攻击，要实现对区块链中的记录进行篡改是很难的，在区块链网络中，由于没有特定的记账人，任一节点失联或被摧毁或被篡改，都不会影响系统的正常运行，系统规定相同数量最多的账本是真账本，少部分和其他用户不一致的为假账本，即少数服从多数，比如在100个人中，A向B借款，写了100份借条，没分都写着A借了B多少钱，每份借条都一模一样，这些借条被平均分给这100个人，如果A不想还钱，把自己的借条撕了，但是没有用啊，其他99个人手里都还有借条，都记录了A向B借了多少钱，抵赖不了。但是理论上也可以抵赖，需要A将除自己以外的其他至少50个人持有的借条撕掉，这样A没有向B借款，就成了事实。所以区块链理论上可以被攻击，但是实际上几乎是不可能的，因为攻击成本太高了。</p>
+<p>区块链最初是广泛使用在比特币，但是比特币不等于区块链</p>
+<p>区块链可以实现除数字货币以外的其他很多产品</p>
+<p>区块链维护一份连续不断的交易记录档</p>
+<p>区块链每一笔资料被称为一个区块（Block）</p>
+<p>区块的详细定义：在区块链技术中，有价值的信息以数据的形式被永久存储下来，这些用于存储数据信息的载体称为<strong>区块</strong>。从技术上来讲，区块是一种记录交易的数据结构，反映了一笔交易的资金流向。区块按时间顺序排列，每一个区块记录着它在被创建期间发生的交易信息（每一个区块可以包含一笔以上的交易记录），所有区块有序链接起来以汇聚成一本“总账”，而每个区块可被看作总账中的一页。（每个区块都会与上一个区块产生连接，包含上一个区块的hash值）</p>
+<p>所有被连接在一起的区块被称为链；</p>
+<p>由多个区块组成的链就叫区块链。</p>
+<p>每个区块在成功产生之后是无法修改的（如果要对一个区块进行篡改，那么在其之后的所有的区块都需要重新挖矿，且在整个比特币系统中超过50%的节点通过验证才可以真正地被修改）</p>
+<p>产生区块的过程又称为“挖矿”；</p>
+<p>负责产生区块的人称为“矿工”；</p>
+<p>负责产生区块的机器又称为“矿机”。</p>
+<p>每一笔资料都可以通过连接找出所有可靠的历史资料【溯源性】</p>
+<p>所有的节点会共同维护整个分布式数据库</p>
+<p>共同维护整份资料库意味着没有人可以说自己的区块是合法有效的区块，多数人验证过后的区块才是合法有效的区块（超过百分之五十）</p>
+<p>每个节点必须存储所有的区块值</p>
+<p>任何一笔资料被篡改都会影响整个数据库的完整性，但是任何一笔资料被篡改的几率微乎其微</p>
+</li>
+<li><p>区块链是如何形成的</p>
+<p>在比特币系统中，每隔10分钟创建一个区块，这个区块记录了这段时间内发生的所有交易。同时，每个区块包含着前一个区块的ID,因此便可根据此ID找到上一个区块，以此类推，追踪到起始区块（创世区块），从而可以生成一个完整的交易链条，形成区块链。</p>
+</li>
+<li><h4 id="区块链的分类："><a href="#区块链的分类：" class="headerlink" title="区块链的分类："></a>区块链的分类：</h4></li>
+</ol>
+<p>1）区块链目前分为三类：公有区块链、私有区块链、联合（行业或联盟）区块链。</p>
+<p>   公有链：公开的，不限制参与的人或者组织、团体</p>
+<p>   私有链：私有的，只对单独个体或组织开放</p>
+<p>   联盟链：只特定的组织或团体可以参与。</p>
+<p>   私有链/私有区块链（Private Blockchain)是对单独个人或组织开放的区块链系统，即系统由一个组织机构控制该系统的写入权限和读取权限。具体而言，系统内的各个节点写入权限将由组织来决定分配，而根据具体情况由组织决定对谁开放多少信息和数据。此外，査询交易的进度等都进行了限制，私有链仍具备多节点运行的通用架构。</p>
+<p>私有链 ，由集中管理者进行管理限制，只有内部少数人可以使用，信息不公开；</p>
+<p>2）私有链有以下几个特点：</p>
+<p>   （1）私有链的交易速度非常快。</p>
+<p>   （2）私有链有更好的隐私保障。</p>
+<p>   （3）私有链有更好的节点连接。</p>
+<p>   （4）私有链的交易成本更加便宜。</p>
+<p>   以上内容摘自：<a href="http://www.868qkl.com/shenme/Private-Blockchain.html" target="_blank" rel="noopener">http://www.868qkl.com/shenme/Private-Blockchain.html</a></p>
+<p>   公有链（公有区块链） ，顾名思义，任何人都可以参与使用和维护，如比特币区块链，信息是完全公开的；世界上任何个体或者团体都可以发送交易，且交易能够获得该区块链的有效确认，任何人都可以参与其共识过程。</p>
+<p>   公有链（Public Blockchain)是最早出现在人们视线范围的区块链，也是目前运用范围最广的区块链。它是完全去中心化的，任何人都能读取和发送交易，而且交易能够在区块链上得到有效的确认，任何人都可参与其中的共识过程。公有链的各个节点可以自由加入和退出网络，各节点之间的拓扑关系是扁平的。</p>
+<p>3）公有链的三大特点如下：</p>
+<p>   <strong>第一，公有链可以保护用户权益免受程序开发者的影响。</strong>在公有链中程序的开发者没有权利干涉用户，所以用户权益更容易得到保护。</p>
+<p>   <strong>第二，公有链开放性强。</strong>在公有链上，任何用户都可建立 自己的应用，从而产生一定程度的网络效应。任何满足一定技术条件的人都可以访问，也就是说，只要有一台能够联网的计算机就能够满足访问的条件。</p>
+<p>   <strong>第三，数据公开透明。</strong>在公有链上的所有数据是默认公开 的，在这里每个参与者都可以看到系统中所有的账户余额和交易活动，也就是所谓的公开透明的分布式“总账”系统。不过，区块链的匿名性让参与者能够隐藏现实世界中的真实身份，从而找到了公开信息与个人隐私保护之间的一个平衡。</p>
+<p>   公有链的典型应用包括比特币、以太坊、超级账本、大多数“山寨币”等，区块链的起源也是由公有链开始的。</p>
+<p>   以上内容摘自：<a href="http://www.868qkl.com/shenme/Public-Blockchain.html" target="_blank" rel="noopener">http://www.868qkl.com/shenme/Public-Blockchain.html</a></p>
+<p>   联盟链（ConsortiumBlockchain)是介于公有链与私有链之间的一种系统形态，它往往由多个中心控制。由若干组织一起合作维护一条区块链，该区块链的使用必须是带有权限的限制访问，相关信息会得到保护，如供应链机构或银行联盟。有专家指出，联盟链的本质是分布式托管记账系统，系统由组织指定的多个“权威”节点控制，这些节点之间根据共识机制对整个系统进行管理与送作。联盟链可视为“部分去中心化”，公众可以査阅和交易，但验证交易或发布智能合约需获得联盟许可。</p>
+<p>   联盟链的典型特点是，各个节点通常有对应的实体机构，只有得到联盟的批准才能加入或退出系统。各个利益相关的机构组织在区块链上展开紧密地合作，并共同维护系统健康稳定的发展。，</p>
+<p>   成立于2015年9月的R3区块链联盟是最典型的联盟链，目前已经有数十家国际银行和金融机构加入，成员遍及全球。这些成员包括纽约梅隆银行、花旗集团、德国商业银行、德意志银行、汇丰银行、日本三菱UFJ金融集团、澳大利亚国民银 行、加拿大皇家银行、法国兴业银行、多伦多道明银行、中国平安、瑞穗银行、北欧银行、意大利联合信贷银行、巴黎银行、富国银行、荷兰国际集团、麦格理银行、加拿大帝国商业银行等金融机构。</p>
+<p>   关于区块链的分类（公有链,私有链和联盟链），一部分学者从权限控制的角度又将其分为无需许可型区块链、限定许可型区块链以及可许可型区块链。无论哪种分类目的都是为了更好地分析不同应用场景下，如何才能发挥区块链技术的最大作用。因此尽管目前关于区块链的分类还存在一些争论，但是并不影响整个行业的发展。</p>
+<p>   以上内容摘自：<a href="http://www.868qkl.com/shenme/Consortium-Blockchain.html" target="_blank" rel="noopener">http://www.868qkl.com/shenme/Consortium-Blockchain.html</a></p>
+<p>四、实验环境二</p>
+<p>访问：<a href="http://10.1.1.100" target="_blank" rel="noopener">http://10.1.1.100</a></p>
+<ol>
+<li>计算hash值。</li>
+</ol>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212443.png" class="lozad"></p>
+<p>2.区块</p>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212505.png" class="lozad"></p>
+<p>Hash值是对最上面的Block值+Nonce值+Data值进行运算后得到的，但是每次开始运算时，Block值和Data值是固定的，只有Nonce值在变化（每次计算时，Nonce值从0开始递增，直到计算出符合条件的额Hash值）。通过不断改变Nonce值来运算得到符合条件的Hash值，这个过程就称为挖矿。</p>
+<p>   我们随便输入Nonce值，点击Mine，开始挖矿。如下图，经过一段时间的运算，得到了符合条件的Hash值，（hash字符串的前四位都是0，0的个数代表了挖矿的难度，这里的挖矿难度就是4）</p>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212524.png" class="lozad"></p>
+<ol start="3">
+<li>区块链</li>
+</ol>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212615.png" class="lozad"></p>
+<p>如图就是区块链，每个区块都包含上一个区块的Hash值，图中的Prev的值就是上一个区块的Hash值。第一个区块没有上一个区块，所以Prev的值为0，一条区块链的第一个区块被称为“创世区块”</p>
+<p>   我们可以看到，随便在这条区块链中的某个区块中添加数据，这个区块以及其后的所有区块都会变红，这就意味着，做了改变之后的Hash值已经不符合要求，此区块及之后的区块都需要重新挖矿。</p>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212637.png" class="lozad"></p>
+<ol start="4">
+<li>分布式</li>
+</ol>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212704.png" class="lozad"></p>
+<p>我们可以看到在分布式模板中，有三条区块链：Peer A、Peer B、Peer C。且每一条的内容都完全一样，每一个区块链，就代表一个节点，这就是我们所说的区块链网络中，每个节点都保存着所有的区块值。</p>
+<ol start="5">
+<li>Tokens</li>
+</ol>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212728.png" class="lozad"></p>
+<p>如图，途中的Tx值，就是交易记录，也是区块中的Data。如我们步骤一所说：每一个区块可以包含一笔以上的交易记录。（简单点理解，Token就是区块中记录的有意义的数据，而不是我们测试时所输入的123等等）</p>
+<p>\6.  CoinBase交易</p>
+<p>   也叫创币交易或铸币交易。是区块中的第一笔交易。比特币网络约定每个区块的第一笔交易是coinbase交易，这是一笔为了让矿工获得奖励及手续费的特殊交易，即发行货币。</p>
+<p>   这么理解：如果某个区块交易记录中有A转给B多少钱，那么我们怎么确定A的钱包中有没有这么多钱，我们就要去查看A有关的上一次或者更多次转账记录，这就是区块链的溯源性。那么一开始A的钱是哪里来的呢？这就涉及到了CoinBase交易，“比特币网络约定每个区块的第一笔交易是coinbase交易，这是一笔为了让矿工获得奖励及手续费的特殊交易。”即，谁将这个区块挖矿成功，谁就会获得全新的coinbase交易中的相应个数的比特币，作为挖矿的激励，所以下图中，区块一中没有交易记录，而区块二中的所有交易记录都是Anders转账给其他人，因为此时，只有Anders的钱包中有余额。</p>
+<p>   比特币通过创币交易到达矿工钱包后，通过转账交易进入流通网络。比特币只有发行和转账两种交易,并且在产生后只能由一个人转移给另一个人，而不能凭空消失。而在转账交易过程中，存在着参与转账的人员之间的利益再分配过程，具体表现为挖矿节点收取的交易手续费。</p>
+<p>交易手续费促使矿工尽可能收集更多的交易以提高激励。在比特币的生成空间耗尽之后（即我们之前提到的比特币只有约2100万个），交易费将逐渐取代创造新块的奖励，成为维持比特币经济存在的最主要因素。</p>
+<p><img alt data-src="https://huangmgb.oss-cn-hongkong.aliyuncs.com/20200508212748.png" class="lozad"></p>
+<h4 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h4><p><a href="https://blog.csdn.net/linvo/article/category/7799517" target="_blank" rel="noopener">https://blog.csdn.net/linvo/article/category/7799517</a></p>
+<p><a href="https://blog.csdn.net/linvo/article/details/81085239" target="_blank" rel="noopener">https://blog.csdn.net/linvo/article/details/81085239</a></p>
+<p><a href="https://www.bilibili.com/video/av6452401?from=search&seid=2008030640776519103" target="_blank" rel="noopener">https://www.bilibili.com/video/av6452401?from=search&seid=2008030640776519103</a></p>
+<p><a href="https://www.bilibili.com/video/av30330961/?p=1" target="_blank" rel="noopener">https://www.bilibili.com/video/av30330961/?p=1</a></p>
+</body></html></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Huang Mi Gao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/05/08/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">http://yoursite.com/2020/05/08/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">饼干🍪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B0%B8%E4%B9%85%E6%BF%80%E6%B4%BB%E7%A0%81/">永久激活码    </a></div><div class="post_share"><div class="social-share" data-image="http://img1.imgtn.bdimg.com/it/u=1747521394,1400572959&amp;fm=26&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2020/05/08/%E5%AE%9E%E9%AA%8C%EF%BC%9AEFS%E7%9A%84%E5%8A%A0%E5%AF%86%E3%80%81%E8%A7%A3%E5%AF%86%E4%B8%8E%E7%A0%B4%E8%A7%A3/"><img class="next_cover lozad" data-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2766671554,1429736205&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>实验：EFS的加密、解密与破解</span></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/04/14/WPS Office Pro 永久激活码/" title="WPS Office Pro 永久激活码"><img class="relatedPosts_cover lozad"data-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4062918002,62316773&fm=11&gp=0.jpgs"><div class="relatedPosts_title">WPS Office Pro 永久激活码</div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div id="lv-container" data-id="city" data-uid="MTAyMC80NTU3OC8yMjA4OQ=="><script>(function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2018 - 2020 By Huang Mi Gao</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><i class="fa fa-book" id="readmode" title="阅读模式"> </i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换">繁</a><i class="fa fa-moon-o nightshift" id="nightshift" title="夜间模式"></i></section><div id="post_bottom"><div id="post_bottom_items"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#一、基础知识"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">一、基础知识</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#区块链"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">区块链</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#比特币"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">比特币</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#区块链的时代"><span class="toc_mobile_items-number">4.</span> <span class="toc_mobile_items-text">区块链的时代</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#二、实验环境"><span class="toc_mobile_items-number">5.</span> <span class="toc_mobile_items-text">二、实验环境</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#三、实验步骤一"><span class="toc_mobile_items-number">6.</span> <span class="toc_mobile_items-text">三、实验步骤一</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#"><span class="toc_mobile_items-number"></span> <span class="toc_mobile_items-text"></span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#中本聪"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">中本聪</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#比特币-1"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">比特币</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#什么是Token"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">什么是Token</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#密码朋克是什么"><span class="toc_mobile_items-number">4.</span> <span class="toc_mobile_items-text">密码朋克是什么</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#什么是算力"><span class="toc_mobile_items-number">5.</span> <span class="toc_mobile_items-text">什么是算力</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#获取比特币的方式"><span class="toc_mobile_items-number">6.</span> <span class="toc_mobile_items-text">获取比特币的方式</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#什么是区块链"><span class="toc_mobile_items-number">7.</span> <span class="toc_mobile_items-text">什么是区块链</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#区块链的分类："><span class="toc_mobile_items-number">8.</span> <span class="toc_mobile_items-text">区块链的分类：</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#参考文章："><span class="toc_mobile_items-number">9.</span> <span class="toc_mobile_items-text">参考文章：</span></a></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" data-click="false"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();</script></body></html>
